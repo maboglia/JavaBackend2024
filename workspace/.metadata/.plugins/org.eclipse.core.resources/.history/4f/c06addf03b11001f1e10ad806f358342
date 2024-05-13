@@ -1,0 +1,21 @@
+package view;
+
+import database.CanzoneDAO;
+import database.CanzoneDAOImpl;
+import model.Canzone;
+
+public class ProvaScritturaSuDB {
+
+	public static void main(String[] args) {
+
+		CanzoneDAO dao = new CanzoneDAOImpl();
+		
+		Canzone c = new Canzone("sinceramente","annalisa");
+		Canzone c2 = new Canzone("bum bum","rose villain");
+		
+		dao.addCanzone(c);
+		dao.addCanzone(c2);
+
+	}
+
+}
