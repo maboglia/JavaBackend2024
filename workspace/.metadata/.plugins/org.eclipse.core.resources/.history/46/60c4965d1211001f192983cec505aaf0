@@ -1,0 +1,10 @@
+package view;
+
+public class ProvaJukeBox {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

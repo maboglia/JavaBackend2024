@@ -1,0 +1,5 @@
+package com.maboglia.model;
+
+public class Libro {
+
+}

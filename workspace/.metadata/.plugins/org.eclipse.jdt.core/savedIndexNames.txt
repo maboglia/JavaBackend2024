@@ -1,0 +1,4 @@
+INDEX VERSION 1.134+Z:\Bogliaccino\JavaBackend2024\workspace\.metadata\.plugins\org.eclipse.jdt.core
+1246426930.index
+1819992663.index
+3830534898.index

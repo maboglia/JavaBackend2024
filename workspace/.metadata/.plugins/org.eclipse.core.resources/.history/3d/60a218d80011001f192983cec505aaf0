@@ -1,0 +1,25 @@
+package com.maboglia.primitivi;
+
+public class ProvaCaratteri {
+
+	public static void main(String[] args) {
+
+		//4 tipi interi
+		byte b = 12;
+		short s = 12;
+		int i = "a";
+		long l = 12L;
+		
+		//tipi reali
+		float f = 12.0f;
+		double d = 12.0d;
+		
+		//1 tipo boolean
+		boolean gira = true;
+		
+		//1 tipo char (numeric)
+		
+		
+	}
+
+}

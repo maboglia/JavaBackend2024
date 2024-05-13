@@ -1,0 +1,32 @@
+package view;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
+public class ProvaJukeBox {
+
+	public static void main(String[] args) {
+
+		File f = new File("\\\\fs-aule\\2023\\B22-126-2024\\canzoni.txt");
+		
+		try {
+			Scanner sc = new Scanner(f);
+			
+			while (sc.hasNextLine()) {
+				String riga = sc.nextLine();
+				System.out.println(riga);
+			}
+			
+			
+			
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+
+	}
+
+}
