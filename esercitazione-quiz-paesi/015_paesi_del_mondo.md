@@ -1,6 +1,18 @@
 # Esercizio Java: Quiz sui Paesi del Mondo
 
-Realizzate un'applicazione Java che metta alla prova le conoscenze geografiche degli utenti tramite un quiz sui paesi del mondo. Ogni domanda presenterà una domanda relativa a un determinato paese, ad esempio trovare la capitale, e fornirà tre opzioni di risposta, di cui solo una corretta.
+Realizzate un'applicazione Java che metta alla prova le conoscenze geografiche degli utenti tramite un quiz sui paesi del mondo. 
+
+
+## Home page
+L'applicazione dispone di una vista home che permette di scegliere tra la modalità allenamento e quiz,
+eventuali altre funzionalità, per esempio 'scegli livello difficoltà', ricorda le risposte, giochi, ...
+
+## Vista Quiz 
+
+L'applicazione dispone di una vista quiz. 
+
+Ogni aggiornamento della pagina presenterà un nuovo quiz, ad esempio trovare la capitale del paese del mondo, e fornirà tre opzioni di risposta, di cui solo una corretta. (a seconda del livello si possono proporre più scelte)
+
 
 ## Descrizione del Quiz
 
@@ -12,7 +24,12 @@ Il quiz conterrà una serie di domande riguardanti vari aspetti dei paesi del mo
 
 La risposta corretta sarebbe "Roma".
 
-## Implementazione
+## Vista allenamento
+
+Questa vista mostra i dati uno per uno per favorire la memorizzazione: del tipo, dell'immagine, etc,
+
+## Implementazione per progetto testuale 
+__(TUI per console)__
 
 1. Definire una classe `Domanda` che rappresenti una singola domanda del quiz. Ogni domanda avrà un testo, un'opzione corretta e due opzioni errate.
 2. Creare una classe `Quiz` che gestisca la logica del quiz. Questa classe dovrebbe contenere un elenco di domande e gestire il caricamento delle domande da un file di dati o da una sorgente dati.
@@ -28,5 +45,9 @@ Per arricchire l'esperienza del quiz, potete considerare l'implementazione delle
 - Consentire agli utenti di scegliere tra diversi livelli di difficoltà del quiz.
 - Aggiungere domande bonus o domande a risposta multipla.
 - Implementare una funzionalità di salvataggio dei punteggi migliori per tener traccia delle prestazioni degli utenti nel tempo.
+- Implementare un gioco del memory con le immagini disponibili
+- Implementare un'architettura a livelli, tiers: entity, repos, services, controllers. 
+- Implementare le viste con approccio REST e/o server-side MVC.
+- Implementare l'app seguendo le best practice di programmazione orientata agli oggetti e utilizzando classi, metodi e attributi appropriati per garantire la chiarezza e la manutenibilità del codice. 
 
-Implementate il quiz seguendo le best practice di programmazione orientata agli oggetti e utilizzando classi, metodi e attributi appropriati per garantire la chiarezza e la manutenibilità del codice.
+Per semplificare il lavoro, si possono utilizzare i framework ai vari livelli.
