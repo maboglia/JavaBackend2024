@@ -13,12 +13,22 @@
             height: 70px;
             border: 1px solid #ccc;
         }
+
+        img.mini {
+            width: 50px;
+            height: 35px;
+            border: 1px solid #ccc;
+        }
     </style>
 </head>
 
 <body>
 
     <div class="container">
+        <h1>Quiz paesi del mondo</h1>
+        <div class="row" th:insert="menu.html :: menu">
+        </div>
+
         <div id="punteggio" class="row"></div>
         <div id="quiz" class="row">
             <div>
@@ -74,18 +84,24 @@
                     function () {
                         if (this.alt == quiz.risposta)
                             vittoria(this.alt)
+                        else
+                            sconfitta(this.alt, quiz.risposta)
                     }
                 )
                 document.querySelector('#box2').addEventListener('click',
                     function () {
                         if (this.alt == quiz.risposta)
                             vittoria(this.alt)
+                        else
+                            sconfitta(this.alt, quiz.risposta)
                     }
                 )
                 document.querySelector('#box3').addEventListener('click',
                     function () {
                         if (this.alt == quiz.risposta)
                             vittoria(this.alt)
+                        else
+                            sconfitta(this.alt, quiz.risposta)
                     }
                 )
 
@@ -95,6 +111,15 @@
             document.getElementById('play').style = 'display:visible'
             let counter = sessionStorage.getItem('punteggio')
             console.log(counter++)
+            sessionStorage.setItem('punteggio', counter)
+
+        }
+
+        function sconfitta(testo, esatta) {
+            document.querySelector('#risposta').innerHTML = `Hai risposto NON correttamente: ${testo}, la risposta corretta &egrave; <img class='mini' src='/img/${esatta}.png'>`;
+            document.getElementById('play').style = 'display:visible'
+            let counter = sessionStorage.getItem('punteggio')
+            console.log(counter--)
             sessionStorage.setItem('punteggio', counter)
 
         }

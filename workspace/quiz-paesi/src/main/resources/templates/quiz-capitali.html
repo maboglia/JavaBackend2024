@@ -11,6 +11,10 @@
 <body>
 
     <div class="container">
+        <h1>Quiz paesi del mondo</h1>
+        <div class="row" th:insert="menu.html :: menu">
+        </div>
+
         <div id="punteggio" class="row"></div>
 
         <div id="quiz" class="row">
@@ -57,12 +61,12 @@
 
                 document.getElementById('play').style = 'display:none'
 
-                for (const paese of paesi) {
-                    quiz.domanda = paese.nome
-                    quiz.risposte.push(paese.capitale)
+                for (const paese of paesi) {//ger, fra, spa
+                    quiz.domanda = paese.nome//spagna
+                    quiz.risposte.push(paese.capitale)//berlino, parigi, madrid
                 }
-                quiz.risposta = quiz.risposte[2]
-                quiz.risposte.sort()
+                quiz.risposta = quiz.risposte[2]//madrid
+                quiz.risposte.sort()//berlino, madrid, parigi
                 document.querySelector('.domanda').textContent = quiz.domanda
                 document.querySelector('#box1').textContent = quiz.risposte[0]
                 document.querySelector('#box2').textContent = quiz.risposte[1]
@@ -73,18 +77,24 @@
                     function () {
                         if (this.textContent == quiz.risposta)
                             vittoria(this.textContent)
+                        else
+                            sconfitta(this.textContent, quiz.risposta)
                     }
                 )
                 document.querySelector('#box2').addEventListener('click',
                     function () {
                         if (this.textContent == quiz.risposta)
                             vittoria(this.textContent)
+                        else
+                            sconfitta(this.textContent, quiz.risposta)
                     }
                 )
                 document.querySelector('#box3').addEventListener('click',
                     function () {
                         if (this.textContent == quiz.risposta)
                             vittoria(this.textContent)
+                        else
+                            sconfitta(this.textContent, quiz.risposta)
                     }
                 )
 
@@ -96,6 +106,15 @@
             document.getElementById('play').style = 'display:visible'
             let counter = sessionStorage.getItem('punteggio')
             console.log(counter++)
+            sessionStorage.setItem('punteggio', counter)
+
+        }
+
+        function sconfitta(testo, esatta) {
+            document.querySelector('#risposta').textContent = `Hai risposto NON correttamente: ${testo}, la risposta corretta &egrave; ${esatta}`;
+            document.getElementById('play').style = 'display:visible'
+            let counter = sessionStorage.getItem('punteggio')
+            console.log(counter--)
             sessionStorage.setItem('punteggio', counter)
 
         }

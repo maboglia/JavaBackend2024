@@ -19,17 +19,18 @@
 <body>
 
     <div class="container">
-        
-        <div id="quiz" class="row">
-            <div class="col-3">
-            	<img class="img" id="box1" src="" alt="">
-			</div>
-            <div class="col-3">
-	            <h1 class="domanda"></h1>
-			</div>
-            <div class="col-3">
-	            <button class="btn btn-primary" id="play">Play</button>
-			</div>
+        <h1>Quiz paesi del mondo</h1>
+        <div class="row" th:insert="menu.html :: menu"></div>
+
+        <div id="quiz" class="card" style="width: 18rem;margin:auto;">
+            <img class="card-img-top" id="box1" src="" alt="">
+            <div class="card-body">
+                <h5 class="card-title domanda">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    card's content.</p>
+                <button class="btn btn-primary" id="play">Play</button>
+
+            </div>
         </div>
     </div>
 
@@ -37,7 +38,7 @@
     <script>
 
         const URL = '/api/paese'
-        
+
         document.getElementById('play').onclick = function () {
             location.reload();
         }
@@ -53,7 +54,7 @@
                 //document.getElementById('play').style = 'display:none'
 
                 for (const paese of paesi) {
-                	console.log(paese)
+                    console.log(paese)
                     quiz.domanda = paese.nome
                     quiz.risposte.push(paese.alpha2Code)
                 }
